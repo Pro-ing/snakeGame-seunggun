@@ -10,9 +10,9 @@ class IEarthWorm {
      * 맵의 크기를 기본값으로 받아와 설정합니다.
      * width : 맵 너비 (int) 
      * height : 맵 높이 (int)
-     * headDirection : 지렁이 방향 (String)
-     * worm : 지렁이 좌표 (Object)
-     * apple : 사과 자표 (Object)
+     * headDirection : 지렁이 방향 (String : UP,DOWN,LEFT,RIGHT)
+     * worm : 지렁이 좌표 (Object) {x:int y:int, x:int y:int ...}
+     * apple : 사과 자표 (Object) {x:int y:int}
      * isGameOver : 게임오버 여부 (boolean)
      */
     constructor(width, height) {
@@ -28,14 +28,16 @@ class IEarthWorm {
      * 재시작 시 게임을 초기화 하는 함수입니다.
      * headDirection, worm, apple, isGameOver 초기화 합니다.
      */
-    gamerReset(){
+    gameReset(){
 
     }
 
     /*
      * 지렁이 진행 방향을 설정합니다.
+     * paramType : String
+     * String : UP,DOWN,LEFT,RIGHT 중 하나
      */
-    setHeadDirection(direction){
+    setHeadDirection(direction) {
 
     }
     
@@ -51,8 +53,10 @@ class IEarthWorm {
      * 지속적인 호출을 통해
      * GameOver 여부 확인 후 인스턴스 객채 값 설정
      * headDirection 인스턴스 객체 방향 값으로 지렁이 좌표 갱신
+     * --> 지렁이가 움직이는 방향과 사용자가 입력한 방향이 반대인 경우 방향키 입력 무시
      * 지렁이 사과 섭취 시 worm 길이 증가 및 애플 객채 랜덤 좌표 생성
      * 방향 값으로 지렁이 좌표가 변경 됩니다.
+     * --> 해당 함수는 각각으로 분리하도록 하겠습니다.
      */
     updateWormStatus() {
 
@@ -86,5 +90,3 @@ class IEarthWorm {
         return this.headDirection;
     }
 }
-
-export { IEarthWorm }
