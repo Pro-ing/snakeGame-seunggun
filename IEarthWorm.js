@@ -20,7 +20,7 @@ class IEarthWorm {
         this.height = height;
         this.headDirection = 'RIGHT';
         this.worm = {x:10,y:10};
-        this.apple = '';
+        this.apple = ''; 
         this.isGameOver = false;
     }
     
