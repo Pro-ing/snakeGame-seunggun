@@ -12,6 +12,7 @@ class EarthWorm {
         this.worm = {x:10,y:10};
         this.headDirection = 'RIGHT';
         this.isGameOver = false;
+        this.apple = this.createApple();
     }
     
     //
@@ -56,6 +57,11 @@ class EarthWorm {
             head.y = head.y + 1;
         }
 
+        if(head.x >= this.width || head.y >= this.height || this.worm.some(worm => worm.x == head.x && worm.y == head.y)){
+            this.isGameOver = true;
+            return;
+        }
+        
         this.worm.unshift(head);
 
         if(Object.entries(head).toString() !== Object.entries(this.apple).toString()){
