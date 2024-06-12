@@ -11,7 +11,7 @@ class IEarthWorm {
      * width : 맵 너비 (int) 
      * height : 맵 높이 (int)
      * headDirection : 지렁이 방향 (String : UP,DOWN,LEFT,RIGHT)
-     * worm : 지렁이 좌표 (Object) {x:int y:int, x:int y:int ...}
+     * worm : 지렁이 좌표 (Array) [{x:int y:int, x:int y:int ...}]
      * apple : 사과 자표 (Object) {x:int y:int}
      * isGameOver : 게임오버 여부 (boolean)
      */
@@ -19,7 +19,7 @@ class IEarthWorm {
         this.width = width;
         this.height = height;
         this.headDirection = 'RIGHT';
-        this.worm = {x:10,y:10};
+        this.worm = [{x:10,y:10}];
         this.apple = ''; 
         this.isGameOver = false;
     }
